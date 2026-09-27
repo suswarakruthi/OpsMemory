@@ -48,6 +48,11 @@ app = FastAPI(
 )
 
 
+@app.get("/")
+async def root():
+    return {"status": "online", "service": "OpsMemory"}
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
